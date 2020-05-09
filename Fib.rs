@@ -3,12 +3,12 @@ use std::env;
 fn main(){
     let args: Vec<String> = env::args().collect();
     if args.len() > 1 {
-        let parse_result = args[1].parse::<i64>();
+        let parse_result = args[1].parse::<i128>();
         if parse_result.is_ok(){
             fib(parse_result.unwrap());
         }
         else{
-            println!("Invalid argument received, '{}' is not a valid i64.",args[1]);
+            println!("Invalid argument received, '{}' is not a valid i128.",args[1]);
         }
     }
     else {
@@ -16,9 +16,9 @@ fn main(){
     }    
 }
 
-fn fib(max : i64){
-    let mut x = 0i64;
-    let mut y = 1i64;
+fn fib(max : i128){
+    let mut x = 0i128;
+    let mut y = 1i128;
     let mut temp;
     
     while x < max {
